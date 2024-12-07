@@ -1,5 +1,5 @@
 [package]
-name = "sequential-storage"
+name = "queue-storage"
 version = "3.0.1"
 edition = "2021"
 license = "MIT OR Apache-2.0"
