@@ -241,7 +241,7 @@ pub async fn peek<'d, S: NorFlash>(
 /// You should not depend on that data.
 ///
 /// If the data buffer is not big enough an error is returned.
-pub async fn pop<'d, S: WordclearNorFlash>(
+pub async fn pop<'d, S: NorFlash>(
     flash: &mut S,
     flash_range: Range<u32>,
     cache: &mut impl CacheImpl,
@@ -481,7 +481,7 @@ impl<'s, 'd, 'q, S: NorFlash, CI: CacheImpl> QueueIteratorEntry<'s, 'd, 'q, S, C
     /// future peeks won't find this data anymore.
     pub async fn pop(self) -> Result<&'d mut [u8], Error<S::Error>>
     where
-        S: WordclearNorFlash,
+        S: NorFlash,
     {
         let (header, data_buffer) = self.item.destruct();
         let ret = &mut data_buffer[..header.length as usize];
