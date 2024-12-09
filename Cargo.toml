@@ -1,5 +1,5 @@
 [package]
-name = "queue-storage"
+name = "sequential-storage"
 version = "3.0.1"
 edition = "2021"
 license = "MIT OR Apache-2.0"
@@ -17,7 +17,6 @@ defmt = { version = "0.3", optional = true }
 futures = { version = "0.3.30", features = ["executor"], optional = true }
 approx = { version = "0.5.1", optional = true }
 arrayvec = { version = "0.7.4", default-features = false, optional = true }
-heapless = { version = "0.8.0", optional = true }
 
 [dev-dependencies]
 approx = "0.5.1"
@@ -29,9 +28,7 @@ defmt-03 = ["dep:defmt"]
 std = []
 # Enable the implementation of the map Key trait for ArrayVec and ArrayString
 arrayvec = ["dep:arrayvec"]
-alloc = []
-heapless = ["dep:heapless"]
-_test = ["dep:futures", "dep:approx", "std", "arrayvec", "alloc", "heapless"]
+_test = ["dep:futures", "dep:approx", "std", "arrayvec"]
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(fuzzing_repro)'] }
