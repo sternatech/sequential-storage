@@ -12,7 +12,7 @@ keywords = ["no_std", "embedded", "flash", "storage"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-embedded-storage-async = "0.4.1"
+embedded-storage-async = { version = "0.4.1", git = "https://github.com/sternatech/embedded-storage", branch = "clear-word" }
 defmt = { version = "0.3", optional = true }
 futures = { version = "0.3.30", features = ["executor"], optional = true }
 approx = { version = "0.5.1", optional = true }

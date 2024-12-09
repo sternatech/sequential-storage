@@ -202,8 +202,8 @@ dependencies = [
  "embedded-hal 0.2.7",
  "embedded-hal 1.0.0",
  "embedded-hal-async",
- "embedded-storage",
- "embedded-storage-async",
+ "embedded-storage 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "embedded-storage-async 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "nb 1.1.0",
 ]
 
@@ -267,8 +267,8 @@ dependencies = [
  "embedded-hal-async",
  "embedded-io",
  "embedded-io-async",
- "embedded-storage",
- "embedded-storage-async",
+ "embedded-storage 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "embedded-storage-async 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "fixed",
  "nrf51-pac",
  "nrf52805-pac",
@@ -382,12 +382,25 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a21dea9854beb860f3062d10228ce9b976da520a73474aed3171ec276bc0c032"
 
 [[package]]
+name = "embedded-storage"
+version = "0.3.1"
+source = "git+https://github.com/sternatech/embedded-storage?branch=clear-word#afe15e59a79373ba4fb59e6b174e8846956dabf0"
+
+[[package]]
 name = "embedded-storage-async"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1763775e2323b7d5f0aa6090657f5e21cfa02ede71f5dc40eead06d64dcd15cc"
 dependencies = [
- "embedded-storage",
+ "embedded-storage 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "embedded-storage-async"
+version = "0.4.1"
+source = "git+https://github.com/sternatech/embedded-storage?branch=clear-word#afe15e59a79373ba4fb59e6b174e8846956dabf0"
+dependencies = [
+ "embedded-storage 0.3.1 (git+https://github.com/sternatech/embedded-storage?branch=clear-word)",
 ]
 
 [[package]]
@@ -401,8 +414,8 @@ dependencies = [
  "embassy-embedded-hal",
  "embassy-executor",
  "embassy-nrf",
- "embedded-storage",
- "embedded-storage-async",
+ "embedded-storage 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "embedded-storage-async 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "panic-probe",
  "sequential-storage",
 ]
@@ -734,7 +747,7 @@ name = "sequential-storage"
 version = "3.0.1"
 dependencies = [
  "defmt",
- "embedded-storage-async",
+ "embedded-storage-async 0.4.1 (git+https://github.com/sternatech/embedded-storage?branch=clear-word)",
 ]
 
 [[package]]
