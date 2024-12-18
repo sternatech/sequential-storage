@@ -538,7 +538,7 @@ async fn store_item_inner<'d, K: Key, S: NorFlash>(
 /// Also watch out for using integers. This function will take any integer and it's easy to pass the wrong type.
 ///
 /// </div>
-pub async fn remove_item<K: Key, S: WordclearNorFlash>(
+pub async fn remove_item<K: Key, S: NorFlash>(
     flash: &mut S,
     flash_range: Range<u32>,
     cache: &mut impl KeyCacheImpl<K>,
@@ -571,7 +571,7 @@ pub async fn remove_item<K: Key, S: WordclearNorFlash>(
 /// *multiple [Value] types. See the module-level docs for more information about this.*
 ///
 /// </div>
-pub async fn remove_all_items<K: Key, S: WordclearNorFlash>(
+pub async fn remove_all_items<K: Key, S: NorFlash>(
     flash: &mut S,
     flash_range: Range<u32>,
     cache: &mut impl KeyCacheImpl<K>,
@@ -585,7 +585,7 @@ pub async fn remove_all_items<K: Key, S: WordclearNorFlash>(
 }
 
 /// If `search_key` is None, then all items will be removed
-async fn remove_item_inner<K: Key, S: WordclearNorFlash>(
+async fn remove_item_inner<K: Key, S: NorFlash>(
     flash: &mut S,
     flash_range: Range<u32>,
     cache: &mut impl KeyCacheImpl<K>,

@@ -30,10 +30,6 @@ pub mod queue;
 /// An in-memory flash type that can be used for mocking.
 pub mod mock_flash;
 
-/// Marker trait that guarantees that a word can be cleared to all 0s.
-pub trait WordclearNorFlash: NorFlash {}
-
-//impl<T> WordclearNorFlash for T where T: MultiwriteNorFlash {}
 
 
 /// The biggest wordsize we support.

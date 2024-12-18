@@ -32,7 +32,7 @@ use crate::{
     cache::PrivateCacheImpl, calculate_page_address, calculate_page_end_address,
     calculate_page_index, get_page_state, round_down_to_alignment, round_down_to_alignment_usize,
     round_up_to_alignment, round_up_to_alignment_usize, AlignedBuf, Error, NorFlashExt, PageState,
-    WordclearNorFlash, MAX_WORD_SIZE,
+     MAX_WORD_SIZE,
 };
 
 #[derive(Debug, Clone)]
@@ -208,7 +208,7 @@ impl<S: NorFlash> ItemHeader<S> {
     }
 }
 
-impl<S: WordclearNorFlash> ItemHeader<S> {
+impl<S: NorFlash> ItemHeader<S> {
     /// Erase this item by setting the crc to none and overwriting the header with it
     pub async fn erase_data(
         mut self,
